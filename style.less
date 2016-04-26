@@ -1,0 +1,144 @@
+/*
+*	Less
+*	Made by Neciu Aurel Dan
+*/
+
+@import "css/mixins.less";
+@import "css/variables.less";
+@import "css/misc.css";
+
+@ff:  'Open Sans', sans-serif;
+body{
+	font-family: @ff;
+}
+p{
+	font-family: @ff;
+	font-size: 16px;
+	color:#2d3a41;
+}
+.history{
+	position: relative;
+	display:block;
+	width:100%;
+	height: auto;
+	background-image: url(img/bg_history.png);
+	background-repeat: repeat-y;
+	background-position:  center ;
+	&:after{
+		background-image: url(img/triunghi.png);
+		background-repeat: no-repeat;
+		content:"";
+		position: absolute;
+		display:block;
+		width:21px;
+		height: 11px;
+		bottom:-10px;
+		left:50%;
+		margin-left:-10px;
+	}
+
+	h4{
+		    font-family: 'Roboto Slab', serif;
+    		font-weight: 700;
+    		font-size: 28px;
+    		color:#2d3a41;
+    		margin-top: -4px;
+	}
+	.etapa{
+		width:50%;
+		float:left;
+		position: relative;
+		background-repeat: no-repeat;
+		&:after{
+			content:"";
+			position: absolute;
+			display:block;
+			background-image: url(img/bg_etapa.png);
+			top:0px;
+			width:108px;
+			height: 21px;
+			right:-11px;
+		}
+		&.par{
+			padding-right: 110px;
+			
+			p{
+				text-align: right;
+			}
+			h4{
+				text-align: right;
+			}
+			&.an3{
+				margin-top: 20px;
+			}
+			&.an1{
+				margin-top:-10px;
+			}
+			&.an6{
+				margin-top: 30px;
+			}
+			&.an8{
+				margin-top: 30px;
+			}
+		}
+		&.impar{
+			float:right;
+			padding-left: 110px;
+			&:after{
+				right: auto;
+				left:-10px;
+				background-image: url(img/bg_etapa2.png);
+			}
+			p{
+				text-align: left;
+			}
+			&.an2{
+				margin-top: 30px;
+			}
+			&.an4{
+				margin-top: 80px;
+			}
+			&.an7{
+				margin-top: 30px;
+			}
+			&.an5{
+				margin-top: 20px;
+			}
+		}
+	}
+
+}
+@media (max-width: @screen-sm) {
+	.history .etapa{
+	width:100%;
+}
+.history .etapa.par h4{
+	text-align: left;
+}
+.history{
+	background-position: left;
+	&:after{
+		left:0px;
+		margin-left: -8px;
+	}
+}
+.history .etapa:after{
+	background-image: url(img/bg_etapa2.png);
+	left:-8px;
+	right:auto;
+	width:50px;
+}
+.history .etapa.impar:after{
+	left:-8px;
+}
+.history .etapa.par p{
+	text-align: left;
+}
+.history .etapa.impar{
+	padding-left: 40px;
+}
+.history .etapa.par{
+	padding-left: 40px;
+	padding-right: 0px;
+}
+	}

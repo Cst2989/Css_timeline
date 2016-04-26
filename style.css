@@ -1,0 +1,203 @@
+@import "css/misc.css";
+/*
+*	Less
+*	Made by Neciu Aurel Dan
+*/
+/* =============================================================================
+	 LESS Mixins
+	 ========================================================================== */
+/* ==|== my mixins ===================================================== */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+.grid-tester-toggle {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+.grid-tester {
+  position: absolute;
+  display: block;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+}
+.grid-tester.visible {
+  display: block;
+}
+.grid-tester .container {
+  height: 100%;
+}
+.grid-tester .container .row {
+  height: 100%;
+}
+.grid-tester .container .row .col-xs-1 {
+  position: relative;
+  display: block;
+  height: 100%;
+  background-clip: content-box;
+}
+.grid-tester .container .row .col-xs-1:first-child:before {
+  left: -5px;
+  width: 10px;
+}
+.grid-tester .container .row .col-xs-1:last-child:after {
+  right: -5px;
+  width: 10px;
+}
+.grid-tester .container .row .col-xs-1:after,
+.grid-tester .container .row .col-xs-1:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  background: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 5px;
+  left: auto;
+  right: 0;
+}
+.grid-tester .container .row .col-xs-1:before {
+  left: 0;
+  right: auto;
+}
+/* screen-sizes */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #2d3a41;
+}
+.history {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  background-image: url(img/bg_history.png);
+  background-repeat: repeat-y;
+  background-position: center ;
+}
+.history:after {
+  background-image: url(img/triunghi.png);
+  background-repeat: no-repeat;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 21px;
+  height: 11px;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -10px;
+}
+.history h4 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #2d3a41;
+  margin-top: -4px;
+}
+.history .etapa {
+  width: 50%;
+  float: left;
+  position: relative;
+  background-repeat: no-repeat;
+}
+.history .etapa:after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-image: url(img/bg_etapa.png);
+  top: 0px;
+  width: 108px;
+  height: 21px;
+  right: -11px;
+}
+.history .etapa.par {
+  padding-right: 110px;
+}
+.history .etapa.par p {
+  text-align: right;
+}
+.history .etapa.par h4 {
+  text-align: right;
+}
+.history .etapa.par.an3 {
+  margin-top: 20px;
+}
+.history .etapa.par.an1 {
+  margin-top: -10px;
+}
+.history .etapa.par.an6 {
+  margin-top: 30px;
+}
+.history .etapa.par.an8 {
+  margin-top: 30px;
+}
+.history .etapa.impar {
+  float: right;
+  padding-left: 110px;
+}
+.history .etapa.impar:after {
+  right: auto;
+  left: -10px;
+  background-image: url(img/bg_etapa2.png);
+}
+.history .etapa.impar p {
+  text-align: left;
+}
+.history .etapa.impar.an2 {
+  margin-top: 30px;
+}
+.history .etapa.impar.an4 {
+  margin-top: 80px;
+}
+.history .etapa.impar.an7 {
+  margin-top: 30px;
+}
+.history .etapa.impar.an5 {
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .history .etapa {
+    width: 100%;
+  }
+  .history .etapa.par h4 {
+    text-align: left;
+  }
+  .history {
+    background-position: left;
+  }
+  .history:after {
+    left: 0px;
+    margin-left: -8px;
+  }
+  .history .etapa:after {
+    background-image: url(img/bg_etapa2.png);
+    left: -8px;
+    right: auto;
+    width: 50px;
+  }
+  .history .etapa.impar:after {
+    left: -8px;
+  }
+  .history .etapa.par p {
+    text-align: left;
+  }
+  .history .etapa.impar {
+    padding-left: 40px;
+  }
+  .history .etapa.par {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+}
